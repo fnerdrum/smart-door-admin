@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+</head>
+<body>
+<h1>Admin console</h1>
+{% for log in logs %}
+  <div>
+      <p>{{ log.name }}</p>
+      <img src={{ log.image }}/>
+  </div>
+{% endfor %}
+</body>
+</html>
