@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
+from flask.json import jsonify
 app = Flask(__name__)
 
 logs = [
@@ -19,7 +20,11 @@ logs = [
 
 @app.route('/')
 def hello():
-    return render_template('index.html', logs = logs)
+    return render_template('index.html')
+
+@app.route('/entries')
+def hello_rest():
+    return jsonify(logs)
 
 if __name__ == '__main__':
     app.run()
